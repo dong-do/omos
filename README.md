@@ -7,7 +7,7 @@ OMOS helps you map transform your object with ease.
 ## Installation
 To install OMOS:
 `npm install --save omos`
-or if you perper yarn:
+or if you prefer Yarn:
 `yarn add omos`
 
 ## Features
@@ -99,3 +99,6 @@ In case of multiple inputs, the order will be kept when value will be pass to `c
   compute: (firstName, lastName) => `${firstName} ${lastName}`,
 }
 ```
+
+## Contribution guide
+Any contribution to this module is appreacited. Just fork the repo then send a merge reqeuest.
