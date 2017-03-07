@@ -1,0 +1,24 @@
+{
+  "name": "om",
+  "version": "0.0.1",
+  "description": "Object mapper on steroid",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dong-do/om.git"
+  },
+  "keywords": [
+    "Object",
+    "Mapper",
+    "Steroid"
+  ],
+  "author": "Dong Do",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dong-do/om/issues"
+  },
+  "homepage": "https://github.com/dong-do/om#readme"
+}
