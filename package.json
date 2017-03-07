@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
-    "sample": "babel-node ./test/sample.js"
+    "build": "babel src --out-dir lib"
   },
   "repository": {
     "type": "git",
