@@ -33,3 +33,30 @@ export const multipleInputResult = {
   origin: "Ha Noi - Viet Nam",
   destination: "Ho Chi Minh - Viet Nam",
 }
+
+export const realWorldObject = {
+  accountInformation: {
+    firstName: "Micheal",
+    lastName: "Jordan",
+    hobbies: ["Play Basketball", "Play Golf", "Count Rings"],
+    address: {
+      state: "Chicago"
+    }
+  },
+  nbaProfile: {
+    mostPointPerGame: 69,
+  },
+};
+
+export const realWorldResult = {
+  profile: {
+    fullName: "Micheal Jordan",
+    homeLocation: "Chicago",
+  },
+  accountInformation: {
+    hobbies: [ 'Play Basketball', 'Play Golf', 'Count Rings' ],
+  },
+  carrer: {
+    mostPoint: 69,
+  },
+};

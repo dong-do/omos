@@ -1,3 +1,7 @@
+import merge from 'deepmerge';
+import { getValueFromSourceObject, writeValueToResult } from './utils';
+
+
 const transformWith = (schema, sourceObject) => {
   
   /**
@@ -62,34 +66,28 @@ const transformWith = (schema, sourceObject) => {
          */
         if (from instanceof Array) {
           const args = from.map(f => {
-            return sourceObject[f];
+            return getValueFromSourceObject(f, sourceObject);
           });
 
-          return {
-            [match.to]: compute(...args)
-          };
+          return writeValueToResult(to, compute(...args), {});
         }
 
         /**
          * Return computed value
          */
-        return {
-          [match.to]: compute(sourceObject[match.from]),
-        };
+        return writeValueToResult(to, compute(getValueFromSourceObject(match.from, sourceObject)), {});
       }
     }
 
-    return {
-      [match.to]: sourceObject[match.from],
-    };
+    return writeValueToResult(to, getValueFromSourceObject(match.from, sourceObject), {});
   });
 
   /**
    * Merge transformed properties in to result object
    */
   const result = transformedProperties.reduce((rObject, tProp) => {
-    return Object.assign({}, rObject, tProp);
-  });
+    return merge(rObject, tProp);
+  }, {});
 
   return result;
 }

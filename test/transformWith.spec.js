@@ -8,7 +8,9 @@ import {
   arrayFromObject,
   arrayFromResult,
   multipleInputResult,
-  multipleInputObject
+  multipleInputObject,
+  realWorldObject,
+  realWorldResult
 } from './fixtures/objects';
 import {
   simpleSchema,
@@ -19,7 +21,8 @@ import {
   schemaWithFunction,
   processIsNotAFunctionSchema,
   multipleInputSchema,
-  multipleInputMissingComputeSchema
+  multipleInputMissingComputeSchema,
+  realWorldSchema
 } from './fixtures/schemas';
 
 describe('transformWith', () => {
@@ -77,5 +80,9 @@ describe('transformWith', () => {
 
   test('can compute multiple input', () => {
     expect(transformWith(multipleInputSchema, multipleInputObject)).toEqual(multipleInputResult);
+  });
+
+  test('can transform deep nested object', () => {
+    expect(transformWith(realWorldSchema,realWorldObject)).toEqual(realWorldResult)
   });
 });

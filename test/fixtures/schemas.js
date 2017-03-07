@@ -101,3 +101,26 @@ export const multipleInputMissingComputeSchema = {
     },
   ]
 }
+
+export const realWorldSchema = {
+  properties: [
+    {
+      from: "accountInformation.address.state",
+      to: "profile.homeLocation",
+    },
+    {
+      from: "accountInformation.hobbies",
+      to: "accountInformation.hobbies",
+    },
+    {
+      from: ["accountInformation.firstName", "accountInformation.lastName"],
+      to: "profile.fullName",
+      compute: (firstName, lastName) => `${firstName} ${lastName}`,
+    },
+    {
+      from: "nbaProfile.mostPointPerGame",
+      to: "carrer.mostPoint",
+    },
+  ],
+};
+
