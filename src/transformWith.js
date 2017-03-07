@@ -92,4 +92,6 @@ const transformWith = (schema, sourceObject) => {
   return result;
 }
 
-module.exports = transformWith;
+export {
+  transformWith
+};

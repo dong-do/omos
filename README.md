@@ -14,7 +14,7 @@ or if you prefer Yarn:
 OMOS is a function that will take a schema as the first argument and source object as second argument and return the result. Simple as that!
 
 ```javascript
-import transformWith from 'omos';
+import { transformWith } from 'omos';
 
 const schema = {
   properties: [
