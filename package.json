@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
-    "prepublish": "yarn install && yarn run test && yarn run lint && yarn run build",
+    "prepublish": "npm install && npm test && npm run lint && npm run build",
     "build": "babel src --out-dir lib",
     "sample": "babel-node ./sample"
   },
