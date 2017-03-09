@@ -1,11 +1,10 @@
 export const getValueFromSourceObject = (key, source) => {
   const splitedKey = (typeof key === 'object')? key : key.split('.');
-  const currentKey = splitedKey.shift();
-  if (typeof source[currentKey] === 'object' && !(Array.isArray(source[currentKey]))) {
-    return getValueFromSourceObject(splitedKey, source[currentKey]);
-  } else {
-    return source[currentKey];
-  }
+
+  return splitedKey.reduce((obj, key) => {
+    if (obj) return obj[key] ? obj[key] : undefined;
+    return undefined;
+  }, source);
 }
 
 export const writeValueToResult = (key, value, resultObject) => {

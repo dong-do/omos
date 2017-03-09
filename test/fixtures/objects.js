@@ -60,3 +60,17 @@ export const realWorldResult = {
     mostPoint: 69,
   },
 };
+
+export const realWorldResultWithExtra = {
+  extraField: "This is extra",
+  profile: {
+    fullName: "Micheal Jordan",
+    homeLocation: "Chicago",
+  },
+  accountInformation: {
+    hobbies: [ 'Play Basketball', 'Play Golf', 'Count Rings' ],
+  },
+  carrer: {
+    mostPoint: 69,
+  },
+};

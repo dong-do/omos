@@ -72,6 +72,7 @@ The result should be:
 
 
 ## OMOS Schema explained
+### Properties
 Schema for OMOS is is javascript object that requires a key named `properties`
 The value of `properties` is a array of matches.
 Each match must contains `from` and `to` key value, which is the key path to value of source object and target object.
@@ -97,6 +98,18 @@ In case of multiple inputs, the order will be kept when value will be pass to `c
   from: ["accountInformation.firstName", "accountInformation.lastName"],
   to: "profile.fullName",
   compute: (firstName, lastName) => `${firstName} ${lastName}`,
+}
+```
+### Initial value
+If you want to have some init value (as template) for your object. You can pass it to `initValue` field inside schema
+```javascript
+{
+  initValue: {
+    message: "This is a initValue for result object",
+  },
+  properties: [
+    {},...
+  ],
 }
 ```
 

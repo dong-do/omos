@@ -7,7 +7,7 @@ const transformWith = (schema, sourceObject) => {
   /**
    * Validate schema
    */
-  const { properties } = schema;
+  const { properties, initValue = {} } = schema;
   /**
    * If properties is missing from schema, throw an error
    */
@@ -87,7 +87,7 @@ const transformWith = (schema, sourceObject) => {
    */
   const result = transformedProperties.reduce((rObject, tProp) => {
     return merge(rObject, tProp);
-  }, {});
+  }, initValue);
 
   return result;
 }

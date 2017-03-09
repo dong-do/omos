@@ -1,4 +1,4 @@
-import transformWith from '../src/transformWith';
+import { transformWith } from '../src/transformWith';
 
 // Fixtures
 import {
@@ -10,7 +10,8 @@ import {
   multipleInputResult,
   multipleInputObject,
   realWorldObject,
-  realWorldResult
+  realWorldResult,
+  realWorldResultWithExtra
 } from './fixtures/objects';
 import {
   simpleSchema,
@@ -22,7 +23,8 @@ import {
   processIsNotAFunctionSchema,
   multipleInputSchema,
   multipleInputMissingComputeSchema,
-  realWorldSchema
+  realWorldSchema,
+  schemaWithInitValue
 } from './fixtures/schemas';
 
 describe('transformWith', () => {
@@ -85,4 +87,9 @@ describe('transformWith', () => {
   test('can transform deep nested object', () => {
     expect(transformWith(realWorldSchema,realWorldObject)).toEqual(realWorldResult)
   });
+
+  test('should work with initValue', () => {
+    expect(transformWith(schemaWithInitValue, realWorldObject)).toEqual(realWorldResultWithExtra);
+  });
+
 });

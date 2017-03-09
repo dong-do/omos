@@ -11,6 +11,14 @@ describe('Utils', () => {
     })).toEqual("Hello World");
   });
 
+  test('return undefined if the path does not exist', () => {
+    expect(getValueFromSourceObject("path.not.exists", {
+      path: {
+        exist: "Hello",
+      }
+    })).toEqual(undefined);
+  });
+
   test('can get value from deep nested object which is a array', () => {
     expect(getValueFromSourceObject("very.deep.value", {
       very: {
